@@ -27,18 +27,20 @@ string stringVar2;
 
 //Prototype or function declaration
 void vdDataTypeSize();
-void vdConvertpartone();
-void vdconvertparttwo();
-void vdconvertpartthree();
-void vdconvertpartfour();
+void vdConvertPartOne();
+void vdConvertPartTwo();
+void vdConvertPartThree();
+void vdConvertPartFour();
+void vdConvertPartFive();
 
 int main()
 {
     vdDataTypeSize(); //Data type size
-    vdConvertpartone(); //Integer conversion
-    vdconvertparttwo(); //Decimal conversion
-    vdconvertpartthree(); //Character conversion
-    vdconvertpartfour();
+    vdConvertPartOne(); //Integer conversion
+    vdConvertPartTwo(); //Decimal conversion
+    vdConvertPartThree(); //Character conversion
+    vdConvertPartFour(); //Conversion between integer and float
+    vdConvertPartFive(); //Conversion between character and numeric
 
     cin.get(); //Avoid window command prompt close directly
 
@@ -61,7 +63,7 @@ void vdDataTypeSize(){
     cout << endl;
 }
 
-void vdConvertpartone(){
+void vdConvertPartOne(){
     //Short to int
     intVar2 = shortVar;
     cout << "Short to Int   : " << intVar2 << endl;
@@ -94,7 +96,7 @@ void vdConvertpartone(){
     cout << endl;
 }
 
-void vdconvertparttwo(){
+void vdConvertPartTwo(){
     //Float to double
     doubleVar2 = floatVar;
     cout << "Float to Double    : " << doubleVar2 << endl;
@@ -107,7 +109,7 @@ void vdconvertparttwo(){
     cout << endl;
 }
 
-void vdconvertpartthree(){
+void vdConvertPartThree(){
     //Char to const char
     constcharVar2 = &charVar;
     cout << "Char to Const Char     : " << constcharVar2 << endl;
@@ -140,7 +142,7 @@ void vdconvertpartthree(){
     cout << endl;
 }
 
-void vdconvertpartfour(){
+void vdConvertPartFour(){
     //Short to float
     floatVar2 = (float)shortVar/4; //Casting to float (Using divided operation to see float result)
     cout << "Short to Float     : " << floatVar2 << endl;
@@ -149,5 +151,33 @@ void vdconvertpartfour(){
     //Double to int
     intVar2 = doubleVar; //Rounding down if covert to integer directly, using round function to round properly
     cout << "Double to Int      : " << intVar2 << endl;
+    cout << "size : " << sizeof(intVar2) << " byte" << endl;
+    cout << endl;
+}
+
+void vdConvertPartFive(){
+    char buff[5];
+
+    //Int to const char
+    itoa(intVar, buff, 10);
+    constcharVar2 = buff;
+    cout << "Int to Const Char      : " << constcharVar2 << endl;
+    cout << "size : " << sizeof(constcharVar2) << " byte" << endl;
+
+    //Short to string
+    stringVar2 = to_string(shortVar);
+    cout << "Short to String        : " << stringVar2 << endl;
+    cout << "size : " << sizeof(stringVar2) << " byte" << endl;
+
+    //Const char to short
+    constcharVar = "10";
+    shortVar2 = atoi(constcharVar); //You can use atof for float, atol for long and much more
+    cout << "Const Char to Short    : " << shortVar2 << endl;
+    cout << "size : " << sizeof(shortVar2) << " byte" << endl;
+
+    //String to int
+    stringVar = "20";
+    intVar2 = stoi(stringVar);
+    cout << "String to Int          : " << intVar2 << endl;
     cout << "size : " << sizeof(intVar2) << " byte" << endl;
 }
