@@ -17,6 +17,10 @@ int inAdd(int a, int b){
     return a + b;
 }
 
+void vdPrint(){
+    cout << "Hello" << endl;
+}
+
 int main()
 {
     //Make function pointer
@@ -32,6 +36,10 @@ int main()
     pinAdd = &inAdd;
     //pinAdd = inAdd; //Another method
 
+    void (*pvdPrint)();
+    pvdPrint = &vdPrint;
+    //pvdPrint = vdPrint; //Another method
+
     //Test function pointer
     cout << "Square of " << i << " is " << pinSquare(i) << endl;
     //cout << "Square of " << i << " is " << (*pinSquare)(i) << endl; //Another method
@@ -41,6 +49,9 @@ int main()
 
     cout << "Add of " << j << " and " << k << " is " << pinAdd(j, k) << endl;
     //cout << "Add of " << j << " and " << k << " is " << (*pinAdd)(j, k) << endl; //Another method
+
+    pvdPrint();
+    //(*pvdPrint)(); //Another method
 
     cin.get();
 
