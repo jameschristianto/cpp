@@ -3,7 +3,7 @@
 using namespace std;
 
 int currentStock, currentLot, yourStock, yourLot;
-float avgStock;
+float avgStock, profit;
 
 int main()
 {
@@ -19,7 +19,10 @@ int main()
         cin >> yourLot;
 
         avgStock = (float)((currentStock * currentLot) + (yourStock * yourLot)) / (currentLot + yourLot);
-        cout << "New average stock : " << avgStock << endl << endl;
+        cout << "New average stock : " << avgStock << endl;
+
+        profit = (float)((currentStock * (currentLot + yourLot) * 100) - (yourStock * (currentLot + yourLot) * 100));
+        cout << "Profit            : " << profit << endl << endl;
     }
 
     system("pause");
