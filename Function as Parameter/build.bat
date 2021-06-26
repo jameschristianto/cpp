@@ -25,7 +25,7 @@ del *.o
 echo Do you want to run app?
 set /p option="[y/n]:"
 if %option%.==y. (
-	start bin\Debug\"Function Pointer.exe"
+	start bin\Debug\"Function as Parameter.exe"
 ) else if %option%.==n. (
 	goto end
 ) else (
