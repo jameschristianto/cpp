@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<user>
+	<name first="James" last="Christianto"/>
+	<age year="24"/>
+	<job value="Software Engineer"/>
+	<hobby>coding</hobby>
+</user>

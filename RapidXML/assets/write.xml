@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<user>
+	<name first="Daniel"/>
+	<age year="24" month="7"/>
+	<hobby>coding</hobby>
+	<sex>male</sex>
+</user>
+
