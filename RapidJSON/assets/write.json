@@ -1,0 +1,1 @@
+{"root_key":{"key_1":"value_1","key_2":"value_2","key_3":{"key_3_child_1":"key_3_value_1","key_3_child_2":"key_3_value_2"},"key_4":[{"key_4_child_1":1,"key_4_child_2":true},{"key_4_child_3":3,"key_4_child_4":false},"new_value_4"],"key_5":3.14,"new_key":true},"extend_key":"new_extend_value","data":[0,1,2,3,4],"new_object":{"data_1":"value_1","data_2":"value_2","data_3":"value_2"}}
