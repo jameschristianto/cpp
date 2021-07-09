@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -46,6 +47,24 @@ int main()
     for(string x : result){
         cout << x << endl;
     }
+
+    cout << endl;
+
+    //stringstream
+    stringstream ss(sentence);
+    string temp;
+    
+    result.clear();
+    while(ss >> temp) result.push_back(temp);
+
+    for(string x : result){
+        cout << x << endl;
+    }
+
+    cout << endl;
+
+    stringstream sstream(sentence);
+    while(getline(sstream, temp, ' ')) cout << temp << endl;
 
     cout << endl;
 
