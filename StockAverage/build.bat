@@ -6,7 +6,7 @@ echo COMPILE START
 echo **************************************************
 
 echo compiling...
-nmake -f makefile.mk
+mingw32-make -f makefile.mk
 
 echo **************************************************
 echo COMPILE FINISH
