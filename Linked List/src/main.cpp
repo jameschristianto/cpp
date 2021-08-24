@@ -4,10 +4,6 @@
 
 using namespace std;
 
-Node::Node(int value){
-    this->value = value;
-}
-
 Node *rootNode = nullptr;
 int menuSelected;
 
@@ -65,6 +61,6 @@ int main()
         }
     }
 
-    cin.get();
+    system("pause");
     return 0;
 }

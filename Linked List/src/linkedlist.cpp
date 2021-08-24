@@ -4,6 +4,11 @@
 
 using namespace std;
 
+Node::Node(int value)
+{
+    this->value = value;
+}
+
 void createNew(Node **node)
 {
     int numberOfNode, nodeValue;
@@ -76,8 +81,10 @@ void insertAt(Node **node)
     cin >> nodePosition;
     cout << endl;
 
-    if(nodePosition > numberOfNode + 1){
-        cout << "Invalid position" << endl << endl;
+    if (nodePosition > numberOfNode + 1)
+    {
+        cout << "Invalid position" << endl
+             << endl;
     }
     if (nodePosition == 1)
     {
@@ -147,8 +154,10 @@ void eraseAt(Node **node)
     cin >> nodePosition;
     cout << endl;
 
-    if(nodePosition > numberOfNode){
-        cout << "Invalid position" << endl << endl;
+    if (nodePosition > numberOfNode)
+    {
+        cout << "Invalid position" << endl
+             << endl;
     }
     else if (nodePosition == 1)
     {
