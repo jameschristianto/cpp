@@ -9,8 +9,8 @@ using namespace std;
 string filePath = "assets/file.txt";
 
 void findValue(unordered_map<int, string> &myMap);
-void print(unordered_map<int, string> &myMap);
-void getSize(unordered_map<int, string> &myMap);
+void print(unordered_map<int, string> myMap);
+void getSize(unordered_map<int, string> myMap);
 void insert(unordered_map<int, string> &myMap);
 void erase(unordered_map<int, string> &myMap);
 void clear(unordered_map<int, string> &myMap);
@@ -114,7 +114,7 @@ void findValue(unordered_map<int, string> &myMap)
     cout << endl;
 }
 
-void print(unordered_map<int, string> &myMap)
+void print(unordered_map<int, string> myMap)
 {
     unordered_map<int, string>::iterator itr;
 
@@ -127,12 +127,13 @@ void print(unordered_map<int, string> &myMap)
             cout << itr->first << " -> " << itr->second << endl;
         }
     }
-    else cout << "No data found..." << endl;
+    else
+        cout << "No data found..." << endl;
 
     cout << endl;
 }
 
-void getSize(unordered_map<int, string> &myMap)
+void getSize(unordered_map<int, string> myMap)
 {
     cout << endl;
     cout << "There is " << myMap.size() << " data" << endl;
@@ -150,11 +151,14 @@ void insert(unordered_map<int, string> &myMap)
     cout << "Input value : ";
     cin >> value;
 
-    if(myMap.find(key) == myMap.end()) myMap.insert({key, value});
-    else myMap.find(key)->second = value;
+    if (myMap.find(key) == myMap.end())
+        myMap.insert({key, value});
+    else
+        myMap.find(key)->second = value;
 
     cout << endl;
 }
+
 void erase(unordered_map<int, string> &myMap)
 {
     int key;

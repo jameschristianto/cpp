@@ -9,8 +9,8 @@ using namespace std;
 string filePath = "assets/file.txt";
 
 void findValue(map<int, string> &myMap);
-void print(map<int, string> &myMap);
-void getSize(map<int, string> &myMap);
+void print(map<int, string> myMap);
+void getSize(map<int, string> myMap);
 void insert(map<int, string> &myMap);
 void erase(map<int, string> &myMap);
 void clear(map<int, string> &myMap);
@@ -114,7 +114,7 @@ void findValue(map<int, string> &myMap)
     cout << endl;
 }
 
-void print(map<int, string> &myMap)
+void print(map<int, string> myMap)
 {
     map<int, string>::iterator itr;
 
@@ -132,7 +132,7 @@ void print(map<int, string> &myMap)
     cout << endl;
 }
 
-void getSize(map<int, string> &myMap)
+void getSize(map<int, string> myMap)
 {
     cout << endl;
     cout << "There is " << myMap.size() << " data" << endl;

@@ -1,6 +1,8 @@
 cls
 @echo off
 
+set option=%1
+
 echo **************************************************
 echo COMPILE START
 echo **************************************************
@@ -21,16 +23,10 @@ copy *.o obj\Debug
 del *.exe
 del *.o
 
-:runApp
-echo Do you want to run app?
-set /p option="[y/n]:"
-if %option%.==y. (
+if %option%.==/r. (
 	start bin\Debug\"Vector.exe"
-) else if %option%.==n. (
-	goto end
 ) else (
-	echo wrong input
-	goto runApp
+	goto end
 )
 
 :end

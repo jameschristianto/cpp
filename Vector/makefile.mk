@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -c -Wall
-CVER = -std=c++17
+CVER = -std=c++11
 
 MAIN = src\main.cpp
 OBJ1 = main.o

@@ -3,72 +3,140 @@
 
 using namespace std;
 
+void print(vector<int> myVector);
+void getSize(vector<int> myVector);
+void insert(vector<int> &myVector);
+void erase(vector<int> &myVector);
+void eraseArea(vector<int> &myVector);
+void clear(vector<int> &myVector);
+
+vector<int> intVector;
+vector<char> charVector = {'a', 'b', 'c'};
+
 int main()
 {
-    vector<int> intVector;
-    vector<char> charVector = {'a', 'b', 'c'};
+    int selected;
 
-    //add value to vector (pop_back for delete last value vector)
     intVector.push_back(1);
     intVector.push_back(7);
     intVector.push_back(3);
     intVector.push_back(2);
     intVector.push_back(5);
 
-    //vector size
-    cout << "size vector integer : " << intVector.size() << endl;
-    cout << "size vector char : " << charVector.size() << endl;
+    do
+    {
+        cout << "1. Print" << endl;
+        cout << "2. Size" << endl;
+        cout << "3. Insert" << endl;
+        cout << "4. Erase" << endl;
+        cout << "5. Erase Area" << endl;
+        cout << "5. Clear" << endl;
+        cout << endl;
 
+        cout << "Input command : ";
+        cin >> selected;
+
+        switch (selected)
+        {
+        case 1:
+            print(intVector);
+            break;
+        case 2:
+            getSize(intVector);
+            break;
+        case 3:
+            insert(intVector);
+            break;
+        case 4:
+            erase(intVector);
+            break;
+        case 5:
+            eraseArea(intVector);
+            break;
+        case 6:
+            clear(intVector);
+            break;
+        default:
+            break;
+        }
+    } while (1);
+
+    system("pause");
+    return 0;
+}
+
+void print(vector<int> myVector)
+{
     cout << endl;
-
     //looping vector method 1
-    for(auto x : intVector){
+    for (auto x : myVector)
+    {
         cout << x << endl;
     }
-
-    cout << endl;
-
-    //erase vector
-    intVector.erase(intVector.begin() + 1);
-
     //looping vector method 2
-    for(vector<int>::iterator it = intVector.begin(); it != intVector.end(); it++){
-        cout << *it << endl;
-    }
-
-    cout << endl;
-
-    //insert vector
-    intVector.insert(intVector.end() - 1, 6);
-    for(vector<int>::iterator it = intVector.begin(); it != intVector.end(); it++){
-        cout << *it << endl;
-    }
-
-    cout << endl;
-
+    //for(vector<int>::iterator it = myVector.begin(); it != myVector.end(); it++){
+    //    cout << *it << endl;
+    //}
     //looping vector method 3
-    for(auto it = charVector.begin(); it != charVector.end(); it++){
-        cout << *it << endl;
-    }
-
-    cout << endl;
-
-    //erase vector area
-    charVector.erase(charVector.begin(), charVector.begin() + 2);
-
+    //for(auto it = myVector.begin(); it != myVector.end(); it++){
+    //    cout << *it << endl;
+    //}
     //looping vector method 4
-    for(unsigned int i = 0; i < charVector.size(); i++){
-        cout << charVector[i] << endl;
-    }
+    //for(unsigned int i = 0; i < myVector.size(); i++){
+    //    cout << myVector[i] << endl;
+    //}
+    cout << endl;
+}
+
+void getSize(vector<int> myVector)
+{
+    cout << endl;
+    cout << "Vector size : " << myVector.size() << endl;
+    cout << endl;
+}
+
+void insert(vector<int> &myVector)
+{
+    int position;
+    int value;
 
     cout << endl;
+    cout << "Position : ";
+    cin >> position;
+    cout << "Value : ";
+    cin >> value;
+    cout << endl;
 
-    //clear vector
-    intVector.clear();
-    charVector.clear();
-    cout << "size vector integer : " << intVector.size() << endl;
-    cout << "size vector char : " << charVector.size() << endl;
+    intVector.insert(myVector.begin() + position - 1, value);
+}
 
-    cin.get();
-    return 0;
+void erase(vector<int> &myVector)
+{
+    int position;
+
+    cout << endl;
+    cout << "Position : ";
+    cin >> position;
+    cout << endl;
+
+    intVector.erase(myVector.begin() + position - 1);
+}
+
+void eraseArea(vector<int> &myVector)
+{
+    int positionStart, positionEnd;
+
+    cout << endl;
+    cout << "Position start : ";
+    cin >> positionStart;
+    cout << "Value end : ";
+    cin >> positionEnd;
+    cout << endl;
+
+    myVector.erase(myVector.begin() + positionStart - 1, myVector.begin() + positionEnd);
+}
+
+void clear(vector<int> &myVector)
+{
+    myVector.clear();
 }
