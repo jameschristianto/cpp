@@ -24,12 +24,21 @@ int main()
 
     //read file
     string line;
+    //string word;
     ifstream inFile(filePath);
     if(inFile.is_open()){
         cout << "able to open file" << endl;
+
+        //get every line
         while(getline(inFile, line)){
             cout << line << endl;
         }
+
+        //get every word
+        //while(inFile >> word) {
+        //    cout << word << endl;
+        //}
+
         inFile.close();
     }
     else cout << "Unable to open file" << endl;
