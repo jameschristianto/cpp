@@ -129,7 +129,7 @@ void eraseArea(vector<int> &myVector)
     cout << endl;
     cout << "Position start : ";
     cin >> positionStart;
-    cout << "Value end : ";
+    cout << "Position end : ";
     cin >> positionEnd;
     cout << endl;
 

@@ -2,6 +2,26 @@
 
 using namespace std;
 
+//simple method
+/*class Singleton{
+public:
+    Singleton (const Singleton&) = delete;
+    static Singleton& getInstance(){
+        return instance;
+    }
+    
+private:
+    Singleton(); //constructor
+    
+    static Singleton instance;
+}
+
+Singleton::instance;
+
+int main(){
+    Singleton& instance = Singleton::getInstance();
+}*/
+
 class Singleton {
     private:
         /* Here will be the instance stored. */
@@ -11,6 +31,9 @@ class Singleton {
         Singleton();
 
     public:
+        /* delete multiple consuctor */
+        Singleton (const Singleton&) = delete;
+
         /* Static access method. */
         static Singleton* getInstance();
 };

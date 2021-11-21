@@ -127,7 +127,8 @@ void print(map<int, string> myMap)
             cout << itr->first << " -> " << itr->second << endl;
         }
     }
-    else cout << "No data found..." << endl;
+    else
+        cout << "No data found..." << endl;
 
     cout << endl;
 }
@@ -150,8 +151,10 @@ void insert(map<int, string> &myMap)
     cout << "Input value : ";
     cin >> value;
 
-    if(myMap.find(key) == myMap.end()) myMap.insert({key, value});
-    else myMap.find(key)->second = value;
+    if (myMap.find(key) == myMap.end())
+        myMap.insert({key, value});
+    else
+        myMap.find(key)->second = value;
 
     cout << endl;
 }
