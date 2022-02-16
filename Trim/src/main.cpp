@@ -22,6 +22,14 @@ char *rtrim(char *s)
     return s;
 }
 
+/*char *rtrim(char *s)
+{
+    char* back = s + strlen(s) - 1;
+    while(isspace(*back)) back--;
+    *(back+1) = '\0';
+    return s;
+}*/
+
 char *trim(char *s)
 {
     return rtrim(ltrim(s)); 
@@ -70,6 +78,22 @@ string& rtrim(string &s)
  
 string& trim(string &s) {
     return ltrim(rtrim(s));
+}*/
+
+//Method 3
+/*string trim(string &text){
+    auto start = text.begin();
+    while(start != text.end() && isspace(*start)){
+        start++;
+    }
+    
+    auto end = text.end();
+    do{
+        end--;
+    }
+    while(distance(start, end) > 0 && isspace(*end));
+    
+    return string(start, end + 1);
 }*/
 
 int main()
