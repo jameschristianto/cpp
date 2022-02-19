@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 #include <iterator>
+#include <algorithm>
 
 using namespace std;
 
@@ -19,9 +20,10 @@ void pushFront(list<int> &myList);
 void popBack(list<int> &myList);
 void popFront(list<int> &myList);
 void sort(list<int> &myList);
-void erase(list<int> &myList); // delete value based on position
+void erase(list<int> &myList);  // delete value based on position
 void remove(list<int> &myList); // delete value
-void clear(list<int> &myList); // delete all
+void clear(list<int> &myList);  // delete all
+void findValue(list<int> myList);
 
 int main()
 {
@@ -40,6 +42,7 @@ int main()
         cout << "9. Erase" << endl;
         cout << "10. Remove" << endl;
         cout << "11. Clear" << endl;
+        cout << "12. Find" << endl;
         cout << endl;
 
         cout << "Select command : ";
@@ -79,6 +82,9 @@ int main()
             break;
         case 11:
             clear(myList);
+            break;
+        case 12:
+            findValue(myList);
             break;
         default:
             break;
@@ -213,4 +219,26 @@ void clear(list<int> &myList)
 {
     myList.clear();
     cout << endl;
+}
+
+void findValue(list<int> myList)
+{
+    int value;
+    cout << "Value : ";
+    cin >> value;
+    cout << endl;
+
+    auto it = find(myList.begin(), myList.end(), value);
+    if (it != myList.end())
+    {
+        // cout << "Found at " << it - myList.begin() + 1 << endl
+        //      << endl;
+        cout << "Found at " << distance(myList.begin(), it) + 1 << endl
+             << endl;
+    }
+    else
+    {
+        cout << "Not found" << endl
+             << endl;
+    }
 }

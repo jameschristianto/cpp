@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -9,6 +10,7 @@ void insert(vector<int> &myVector);
 void erase(vector<int> &myVector);
 void eraseArea(vector<int> &myVector);
 void clear(vector<int> &myVector);
+void findValue(vector<int> myVector);
 
 vector<int> intVector;
 vector<char> charVector = {'a', 'b', 'c'};
@@ -30,7 +32,8 @@ int main()
         cout << "3. Insert" << endl;
         cout << "4. Erase" << endl;
         cout << "5. Erase Area" << endl;
-        cout << "5. Clear" << endl;
+        cout << "6. Clear" << endl;
+        cout << "7. Find" << endl;
         cout << endl;
 
         cout << "Input command : ";
@@ -56,6 +59,9 @@ int main()
         case 6:
             clear(intVector);
             break;
+        case 7:
+            findValue(intVector);
+            break;
         default:
             break;
         }
@@ -68,23 +74,23 @@ int main()
 void print(vector<int> myVector)
 {
     cout << endl;
-    //looping vector method 1
+    // looping vector method 1
     for (auto x : myVector)
     {
         cout << x << endl;
     }
-    //looping vector method 2
-    //for(vector<int>::iterator it = myVector.begin(); it != myVector.end(); it++){
-    //    cout << *it << endl;
-    //}
-    //looping vector method 3
-    //for(auto it = myVector.begin(); it != myVector.end(); it++){
-    //    cout << *it << endl;
-    //}
-    //looping vector method 4
-    //for(unsigned int i = 0; i < myVector.size(); i++){
-    //    cout << myVector[i] << endl;
-    //}
+    // looping vector method 2
+    // for(vector<int>::iterator it = myVector.begin(); it != myVector.end(); it++){
+    //     cout << *it << endl;
+    // }
+    // looping vector method 3
+    // for(auto it = myVector.begin(); it != myVector.end(); it++){
+    //     cout << *it << endl;
+    // }
+    // looping vector method 4
+    // for(unsigned int i = 0; i < myVector.size(); i++){
+    //     cout << myVector[i] << endl;
+    // }
     cout << endl;
 }
 
@@ -139,4 +145,26 @@ void eraseArea(vector<int> &myVector)
 void clear(vector<int> &myVector)
 {
     myVector.clear();
+}
+
+void findValue(vector<int> myVector)
+{
+    int value;
+    cout << "Value : ";
+    cin >> value;
+    cout << endl;
+
+    auto it = find(myVector.begin(), myVector.end(), value);
+    if (it != myVector.end())
+    {
+        //cout << "Found at " << it - myVector.begin() + 1 << endl
+        //     << endl;
+        cout << "Found at " << distance(myVector.begin(), it) + 1 << endl
+             << endl;
+    }
+    else
+    {
+        cout << "Not found" << endl
+             << endl;
+    }
 }
