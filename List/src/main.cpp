@@ -199,7 +199,6 @@ void erase(list<int> &myList)
 void remove(list<int> &myList)
 {
     int value;
-    list<int>::iterator itr = myList.begin();
 
     cout << endl;
     cout << "Input value : ";
