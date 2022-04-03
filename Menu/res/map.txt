@@ -1,0 +1,12 @@
+main menu
+Sale=1
+Mini ATM=2
+Setting=3
+
+sub menu
+Installment=11
+Card Verification=12
+On Us=13
+Off Us=14
+Payment=15
+Top Up=16

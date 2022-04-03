@@ -1,0 +1,10 @@
+Sale
+ Installment
+ Card Verification
+Mini ATM
+ Transfer
+  On Us
+  Off Us
+ Payment
+ Top Up
+Setting
