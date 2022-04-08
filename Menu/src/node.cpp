@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "../include/node.h"
 
 Node::Node(string value)

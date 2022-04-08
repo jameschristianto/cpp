@@ -1,3 +1,7 @@
+#include <string>
+
+using namespace std;
+
 #define SALE 1
 #define MINI_ATM 2
 #define SETTING 3

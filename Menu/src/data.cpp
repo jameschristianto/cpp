@@ -3,6 +3,8 @@
 #include <string>
 #include <fstream>
 
+#include "../include/data.h"
+
 using namespace std;
 
 map<string, int> menuId;
